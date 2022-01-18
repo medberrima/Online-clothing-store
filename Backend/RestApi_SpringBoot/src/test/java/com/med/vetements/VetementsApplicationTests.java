@@ -17,7 +17,7 @@ public class VetementsApplicationTests {
 
   @Test
   public void testCreateVetement() {
-    Vetement vet = new Vetement(null, "Espadrille Nike", null, 120.00 , 0, new Date(), null);
+    Vetement vet = new Vetement(null, "Espadrille Nike", null, null, 120.00 , 0, new Date(), null);
     vetementRepository.save(vet);
   }
 

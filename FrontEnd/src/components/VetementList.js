@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { AiFillCalendar, AiFillStar, AiFillDollarCircle, AiOutlineSearch } from 'react-icons/ai'
+import { AiFillCalendar, AiFillStar, AiFillDollarCircle } from 'react-icons/ai'
 import { GiClothes } from 'react-icons/gi'
 import Home from './Home';
 import { Link } from 'react-router-dom';
 import VetementService from '../services/VetementService'
 import CategorieService from '../services/CategorieService'
 import './Vetement.css'
-import Select from 'react-select';
-import Navbar from './Navbar';
 import {  useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
@@ -25,15 +23,18 @@ const VetementList = () => {
   useEffect(() => {
     getVetements();
     getCategories();
+    logout() ;
+    getRole() ; 
   }, []);
 
-  useEffect(() => {
+ 
+  const logout = () => {
     let token = localStorage.getItem("token");
     if (token != null)  setUser(jwt_decode(token + "").sub);
     else history.push("/login");
-  }, [])
+  }
 
-  useEffect(() => {
+  const getRole = () =>{
     let token = localStorage.getItem("token");
     console.log(token)
     if (token) {
@@ -41,7 +42,10 @@ const VetementList = () => {
       if (user.roles.includes("ADMIN"))     setIsAdmin(true);
       else if (user.roles.includes("USER")) setIsUser(true);
     }
-  }, [])
+  }
+
+
+
 
   const getCategories = async () => {
     CategorieService.getAll()
@@ -93,8 +97,8 @@ const VetementList = () => {
           <div className="col-3 recherche bg-light">
             <h1>FILTER</h1> 
             <div>
-              <div class="form-group">
-                <label for="formGroupExampleInput2">Recherche</label>
+              <div className="form-group">
+                <label htmlFor="formGroupExampleInput2">Recherche</label>
                 <input type="search" id="form1" className="form-control my-3  form-control-lg" placeholder="Search" onChange={inputChange}/>
               </div>
             <div className="form-group">

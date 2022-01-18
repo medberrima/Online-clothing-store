@@ -5,7 +5,6 @@ import {  useParams } from 'react-router-dom';
 import VetementService from '../services/VetementService'
 import './Vetement.css'
 import {  AiFillStar } from 'react-icons/ai'
-import { GiClothes } from 'react-icons/gi'
 
 
 export const VetementView = () => {

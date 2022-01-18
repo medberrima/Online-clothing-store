@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="navbar-nav">
           <Link className="nav-link active" aria-current="page" to={"/vetements"}>Home</Link>
           {isAdmin && <Link className="nav-link " to={"/add"}>Add Vetement </Link>}
-          <Link className="nav-link" to={"/"}>Pricing</Link>
+          {/* <Link className="nav-link" to={"/"}>Pricing</Link> */}
         </div>
         <div className="navbar-nav">
           {isAdmin && <div className="nav-link btn-primary  text-light" style={{cursor:"pointer"}} onClick={logout}>Logout {user}(admin)  </div>}

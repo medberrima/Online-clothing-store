@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-UsersApplication<users>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.med.users.UsersApplication",
+      "projectName": "users",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-VetementsApplication<produits>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.med.vetements.VetementsApplication",
+      "projectName": "produits",
+      "args": ""
+    }
+  ]
+}
